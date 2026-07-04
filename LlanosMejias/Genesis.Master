@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Genesis.master.cs" Inherits="LlanosMejias.Genesis" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Gestión Académica</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <link href="assets/css/Estilos.css?v=3" rel="stylesheet" type="text/css" />
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <form id="form1" runat="server">
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar mb-5 shadow-sm">
+    <div class="container">
+           <div class="d-flex align-items-center navbar-brand mb-0">
+               <i class="bi bi-mortarboard-fill me-2 text-warning fs-3"></i>
+               <h1 class="fs-4 fw-bold text-white mb-0 d-inline-block">
+                   Portal Académico <span class="fw-light text-muted">| Control de Notas</span>
+               </h1>
+           </div>        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+
+                <li class="nav-item">
+                    <a class="nav-link fw-medium px-3" href="Registros.aspx">
+                        <i class="bi bi-person-plus me-1"></i> Registrar Alumnos y Notas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-medium px-3" href="MostrarAlumno.aspx">
+                        <i class="bi bi-search me-1"></i> Buscar Alumnos
+                    </a>
+                </li>  
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <span class="badge bg-success-subtle text-success border border-success-subtle py-2 px-3 rounded-pill d-flex align-items-center">
+                        <i class="bi bi-database-fill-check me-1"></i> BD: PRUEBA4
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+        <main class="container flex-grow-1">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+        <footer class="custom-footer text-center py-4 mt-5">
+            <div class="container">
+                <span>&copy; <%= DateTime.Now.Year %> - Sistema de Calificaciones - Sitio creado por Victor LLanos Mejias </span>
+                
+            </div>
+        </footer>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
