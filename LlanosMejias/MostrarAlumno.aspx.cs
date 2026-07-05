@@ -26,7 +26,7 @@ namespace LlanosMejias
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             string rutBuscar = txtBuscarRut.Text.Trim();
-            if (rutBuscar == "")
+            if (string.IsNullOrEmpty(rutBuscar))
             {
                 lblEstadoAlumno.Visible = true;
                 lblEstadoAlumno.Text = "Por favor, ingrese un RUT para realizar la búsqueda.";

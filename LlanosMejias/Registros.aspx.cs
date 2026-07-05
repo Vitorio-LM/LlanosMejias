@@ -20,7 +20,11 @@ namespace LlanosMejias
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtRut.Text == "" || txtNombre.Text == "" || txtNota1.Text == "" || txtNota2.Text == "" || txtNota3.Text == "")
+            if (string.IsNullOrWhiteSpace(txtRut.Text.Trim()) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text.Trim()) ||
+                string.IsNullOrWhiteSpace(txtNota1.Text.Trim()) ||
+                string.IsNullOrWhiteSpace(txtNota2.Text.Trim()) ||
+                string.IsNullOrWhiteSpace(txtNota3.Text.Trim()))
             {
                 lblStatus.Text = "Faltan datos por ingresar, verifique antes de Continuar.";
                 lblStatus.CssClass = "text-danger d-block text-center";
@@ -28,6 +32,13 @@ namespace LlanosMejias
             }
             string rut = txtRut.Text.Trim();
             string nombre = txtNombre.Text.Trim();
+
+            if (rut.Length > 12)
+            {
+                lblStatus.Text = "El RUT ingresado es demasiado largo. Máximo 12 caracteres (ej: 11.222.333-4).";
+                lblStatus.CssClass = "text-danger d-block text-center";
+                return;
+            }
 
             if (motorDatos.ComprobarExistenciaRut(rut))
             {
@@ -78,7 +89,7 @@ namespace LlanosMejias
                 dtAlumnoReciente.Rows.Add(rut, nombre, n1, n2, n3, promedio);
                 gvAlumnos.DataSource = dtAlumnoReciente;
                 gvAlumnos.DataBind();
-                LimpiarInputs();
+                Limpiar();
             }
             else
             {
@@ -86,7 +97,7 @@ namespace LlanosMejias
                 lblStatus.CssClass = "text-danger d-block text-center";
             }
         }
-        private void LimpiarInputs()
+        private void Limpiar()
         {
             txtRut.Text = string.Empty;
             txtNombre.Text = string.Empty;
