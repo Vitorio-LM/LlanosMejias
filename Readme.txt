@@ -1,6 +1,8 @@
 ﻿
 ## Instrucciones de Configuración Inicial
 
+>  **NOTA IMPORTANTE:** Si la base de datos y la tabla `Alumnos` ya fueron creadas previamente en su entorno local, puede ignorar los Pasos 2 y 3, y pasar directamente al **Paso 4** para configurar su cadena de conexión.
+
 Siga detalladamente los siguientes pasos para configurar la base de datos y la cadena de conexión en su entorno local:
 
 ### Paso 1: Adjuntar y Abrir la Base de Datos
